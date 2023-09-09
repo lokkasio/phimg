@@ -1,20 +1,23 @@
 import { FunctionComponent } from "preact";
+import { TargetedEvent } from "preact/compat";
 import { clsx } from "clsx";
+import { updateFavicon } from "src/favicon";
 import { PlaceholderDataUrl, placeholderDataUrl } from "./PlaceholderDataUrl";
 import { PlaceholderServiceWorkerUrl } from "./PlaceholderSwUrl";
 import style from "./Result.module.css";
-import { TargetedEvent } from "preact/compat";
 
 const iOS = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
-const onImageLoaded = iOS
-  ? (event: TargetedEvent<HTMLImageElement, Event>) => {
-      // force repaint on ios
-      event.currentTarget.setAttribute("hidden", "");
-      requestAnimationFrame(() => {
-        event.currentTarget.removeAttribute("hidden");
-      });
-    }
-  : undefined;
+const onImageLoaded = (event: TargetedEvent<HTMLImageElement, Event>) => {
+  updateFavicon(event.currentTarget);
+
+  if (iOS) {
+    // force repaint
+    event.currentTarget.setAttribute("hidden", "");
+    requestAnimationFrame(() => {
+      event.currentTarget.removeAttribute("hidden");
+    });
+  }
+};
 
 export const Result: FunctionComponent<{ className?: string }> = ({
   className,

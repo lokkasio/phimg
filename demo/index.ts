@@ -1,6 +1,7 @@
 import "./index.css";
 import { rest, setupWorker } from "msw";
 import { mswResolver } from "src/msw";
+import { updateFavicon } from "src/favicon";
 
 const $input = document.getElementById("input") as HTMLInputElement;
 const $img = document.getElementById("img") as HTMLImageElement;
@@ -19,6 +20,7 @@ const log = (msg: string) => {
 
 $img.addEventListener("load", () => {
   $content.setAttribute("aria-busy", "false");
+  updateFavicon($img);
 });
 $img.addEventListener("error", (e) => {
   $content.setAttribute("aria-busy", "false");
