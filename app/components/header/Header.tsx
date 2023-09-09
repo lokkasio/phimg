@@ -1,6 +1,5 @@
 import { FunctionComponent, JSX, ComponentChild } from "preact";
 import { clsx } from "clsx";
-import style from "./Header.module.css";
 
 export const Header: FunctionComponent<{
   logo: ComponentChild;
@@ -8,17 +7,17 @@ export const Header: FunctionComponent<{
     label: ComponentChild;
   } & JSX.HTMLAttributes<HTMLAnchorElement>)[];
 }> = ({ logo, navItems, ...props }) => (
-  <header className={style._} {...props}>
-    <div className={clsx(style.inner, "content")}>
-      <a href="./" className={style.logo}>
+  <header className="header" {...props}>
+    <div className="header__inner content">
+      <a href="./" className="header__logo">
         {logo}
       </a>
-      <nav className={style.nav}>
+      <nav className="header__nav">
         {navItems.map(({ label, className, href, ...props }) => (
           <a
             href={href}
             key={href}
-            className={clsx(style.navLink, className)}
+            className={clsx("header__navLink", className)}
             {...props}
           >
             {label}

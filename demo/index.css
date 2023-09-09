@@ -1,5 +1,4 @@
 @import "app/index.css";
-@import "app/components/header/Header.module.css";
 
 label {
   margin-bottom: 1rem;

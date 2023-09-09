@@ -134,6 +134,53 @@ progress {
   padding: 0.5rem;
 }
 
+.header {
+  box-shadow: var(--c0-3) 0px 0px 4px;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.header__nav {
+  --nav-link-color: var(--c4);
+  --nav-link-color-hover: var(--c1);
+
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .header__nav {
+    --nav-link-color: var(--c7);
+    --nav-link-color-hover: var(--c9);
+  }
+}
+
+.header__logo,
+.header__navLink {
+  padding: 0.5rem;
+  text-decoration: none;
+}
+
+.header__logo {
+  font-family: cursive;
+  color: var(--c5);
+}
+
+.header__navLink {
+  color: var(--nav-link-color);
+}
+
+.header__logo:hover,
+.header__logo:focus,
+.header__navLink:hover,
+.header__navLink:focus {
+  color: var(--nav-link-color-hover);
+}
+
 .visuallyHidden {
   position: absolute;
   width: 1px;
