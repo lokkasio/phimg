@@ -8,7 +8,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "_build": "esbuild app=app/index.tsx demo=demo/index.ts --bundle --outdir=www --sourcemap --target=safari15 --format=esm --alias:react=preact/compat --define:process.env.CI=\\\"${CI}\\\"",
+    "_build": "esbuild app=app/index.tsx demo=demo/index.ts --bundle --splitting --outdir=www --sourcemap --target=safari15 --format=esm --alias:react=preact/compat --define:process.env.CI=\\\"${CI}\\\"",
     "dev": "npm run _build -- --watch --servedir=www",
     "build": "NODE_ENV=production npm run _build -- --minify",
     "prepare": "cd www && git clean -xdf && cd .. && msw init www"
