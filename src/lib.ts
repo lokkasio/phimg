@@ -5,7 +5,7 @@ const toHex = (c: number) => ("0" + c.toString(16)).slice(-2);
 export const alphaHex = (a: number) =>
   a < 100 ? toHex(Math.round(a * 2.55)) : "";
 
-export const create2dContex = (width: number, height: number) => {
+const create2dContex = (width: number, height: number) => {
   const canvas = document.createElement("canvas");
   canvas.width = width;
   canvas.height = height;
@@ -59,40 +59,4 @@ export const searchParamsToSvgString = (searchParams: URLSearchParams) => {
   if (svgOptions) {
     return createSvgString(svgOptions);
   }
-};
-
-export const createPlaceholderSearchParams = ({
-  width,
-  height,
-  text,
-  textColor,
-  textOpacity,
-  background,
-}: {
-  width: number;
-  height: number;
-  text?: string;
-  textColor?: string;
-  textOpacity?: number;
-  background?: string | number[];
-}) => {
-  const searchParams = new URLSearchParams({
-    w: String(width),
-    h: String(height),
-  });
-
-  if (text.length) {
-    searchParams.set("t", text);
-    if (textColor) {
-      searchParams.set("c", textColor.slice(1) + alphaHex(textOpacity));
-    }
-  }
-
-  if (background) {
-    searchParams.set(
-      "b",
-      Array.isArray(background) ? Array.from(background).join("-") : background
-    );
-  }
-  return searchParams;
 };

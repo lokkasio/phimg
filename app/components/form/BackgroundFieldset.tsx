@@ -1,5 +1,5 @@
 import { FunctionComponent } from "preact";
-import { effect, signal } from "@preact/signals";
+import { effect } from "@preact/signals";
 import { sessionSignal } from "app/sessionSignal";
 import { RadioGroup } from "./radio-group/RadioGroup";
 import {
@@ -19,7 +19,7 @@ export const bgType = sessionSignal<
   "color" | "image" | "custom" | "transparent"
 >("bg_type", "color");
 
-export const background = signal<string | Array<number>>(backgroundColor.value);
+export const background = sessionSignal("bg", backgroundColor.value);
 effect(() => {
   switch (bgType.value) {
     case "color":
@@ -28,7 +28,7 @@ effect(() => {
 
     case "image":
       if (thumbHash.value?.length) {
-        background.value = thumbHash.value;
+        background.value = thumbHash.value.join("-");
       }
       break;
 

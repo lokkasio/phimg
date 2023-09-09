@@ -1,4 +1,4 @@
-import { getFontSize } from "./lib";
+import { getFontSize, thumbHashToDataURL } from "./lib";
 import h from "./vsvg";
 
 export type SvgOptions = {
@@ -16,6 +16,7 @@ export type SvgOptions = {
 
 const reAlphaHex = /^[0-9a-f]{6}|[0-9a-f]{8}$/;
 const reUrlHexPairs = /%[\dA-F]{2}/g;
+const reThumbhash = /^(\d+-)+\d+$/;
 
 export function createSvgString({
   w: width,
@@ -26,8 +27,10 @@ export function createSvgString({
 }: SvgOptions) {
   const fontSize = text ? getFontSize(width * 0.85, text) : 0;
   const backgroundStyle = background
-    ? background.startsWith("data:image/")
-      ? `url(${background}) 0/100% 100% no-repeat`
+    ? reThumbhash.test(background)
+      ? `url(${thumbHashToDataURL(
+          background.split("-").map(Number)
+        )}) 0/100% 100% no-repeat`
       : reAlphaHex.test(background)
       ? "#" + background
       : background
