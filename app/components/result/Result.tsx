@@ -8,13 +8,14 @@ import style from "./Result.module.css";
 
 const iOS = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
 const onImageLoaded = (event: TargetedEvent<HTMLImageElement, Event>) => {
-  updateFavicon(event.currentTarget);
+  const img = event.target as HTMLImageElement;
+  updateFavicon(img);
 
   if (iOS) {
     // force repaint
-    event.currentTarget.setAttribute("hidden", "");
+    img.setAttribute("hidden", "");
     requestAnimationFrame(() => {
-      event.currentTarget.removeAttribute("hidden");
+      img.removeAttribute("hidden");
     });
   }
 };
