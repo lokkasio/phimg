@@ -67,6 +67,9 @@ const hexDecode = {
   "%3D": "=",
   "%3A": ":",
   "%2F": "/",
+  "%3C": "<",
+  "%3E": ">",
+  "%25": "%",
 };
 export const svgStringToDataUrl = (svgString: string) => {
   svgString = svgString.trim().replaceAll('"', "'");

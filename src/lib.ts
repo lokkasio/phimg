@@ -33,7 +33,7 @@ export const getFontSize = (boxWidth: number, text: string) => {
   const metrics = context.measureText(text);
   const textWidth =
     metrics.actualBoundingBoxLeft + metrics.actualBoundingBoxRight;
-  return (boxWidth / textWidth) * referenceFontSize;
+  return Math.floor((boxWidth / textWidth) * referenceFontSize);
 };
 
 export const thumbHashToDataURL = (

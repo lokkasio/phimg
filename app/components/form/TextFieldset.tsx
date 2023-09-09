@@ -6,7 +6,10 @@ import { width, height } from "./SizeFieldset";
 import formStyle from "./index.module.css";
 import { Input } from "./input/Input";
 
-const textType = sessionSignal<"size" | "custom" | "none">("text_type", "size");
+export const textType = sessionSignal<"size" | "custom" | "none">(
+  "text_type",
+  "size"
+);
 
 export const text = sessionSignal(
   "text_text",

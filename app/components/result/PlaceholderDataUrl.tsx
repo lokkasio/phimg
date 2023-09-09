@@ -1,25 +1,13 @@
 import { computed } from "@preact/signals";
-import { createSvgString, svgStringToDataUrl } from "src/svg";
-import { alphaHex } from "src/lib";
-import { background } from "../form/BackgroundFieldset";
-import { width, height } from "../form/SizeFieldset";
-import { text, textColor, textOpacity } from "../form/TextFieldset";
+import { svgStringToDataUrl } from "src/svg";
+import { searchParamsToSvgString } from "src/lib";
 import { createCopyCode } from "../copy-code/createCopyCode";
-
-const svgString = computed(() => {
-  return createSvgString({
-    w: width.value,
-    h: height.value,
-    b: background.value,
-    t: text.value,
-    c:
-      textColor.value && textColor.value.slice(1) + alphaHex(textOpacity.value),
-  });
-});
+import { placeholderSearchParams } from "./placeholderSearchParms";
 
 export const placeholderDataUrl = computed(() => {
-  if (svgString.value) {
-    return svgStringToDataUrl(svgString.value);
+  const svgString = searchParamsToSvgString(placeholderSearchParams.value);
+  if (svgString) {
+    return svgStringToDataUrl(svgString);
   }
 });
 
