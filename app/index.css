@@ -135,6 +135,10 @@ progress {
 }
 
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--bg-color);
   box-shadow: var(--c0-3) 0px 0px 4px;
 }
 
@@ -171,6 +175,7 @@ progress {
 }
 
 .header__navLink {
+  line-height: 1;
   color: var(--nav-link-color);
 }
 
