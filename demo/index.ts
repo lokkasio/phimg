@@ -44,14 +44,25 @@ $input.addEventListener("input", (event) => {
 });
 
 if (!("serviceWorker" in navigator)) {
-  log("❌ service worker is not supported by your browser!");
   $content.setAttribute("aria-busy", "false");
+  log("❌ service worker is not supported by your browser!");
 }
 
+const pathPrefix = process.env.CI ? "/phimg" : "";
 setupWorker(rest.get("/phimg.svg", mswResolver))
-  .start()
+  .start({
+    serviceWorker: {
+      url: pathPrefix + "/mockServiceWorker.js",
+      options: {
+        scope: pathPrefix + "/",
+      },
+    },
+  })
   .then(updateSrc)
-  .catch(log);
+  .catch((error) => {
+    $content.setAttribute("aria-busy", "false");
+    log(error);
+  });
 window.addEventListener("hashchange", updateSrc);
 
 if (process.env.NODE_ENV !== "production") {
