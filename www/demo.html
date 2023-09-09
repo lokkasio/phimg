@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Placeholder Image Demo</title>
+    <link rel="stylesheet" href="demo.css" />
+    <script type="module" src="demo.js"></script>
+  </head>
+  <body>
+    <header class="Header__2">
+      <div class="Header_inner2 content">
+        <a href="./" class="Header_logo2">phimg</a>
+        <nav class="Header_nav2">
+          <a class="Header_navLink2" href="./">Image Generator</a>
+        </nav>
+      </div>
+    </header>
+    <div
+      id="content"
+      class="content"
+      aria-busy="true"
+      aria-describedby="progress-bar"
+    >
+      <label><span>Image Source</span><input type="text" id="input" /></label>
+      <img id="img" />
+    </div>
+    <progress id="progress-bar" aria-label="Content loading…"></progress>
+    <pre id="log"></pre>
+  </body>
+</html>

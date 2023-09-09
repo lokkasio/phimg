@@ -1,0 +1,146 @@
+:root {
+  --s0: 0;
+  --s1: 0.05;
+  --s2: 0.13;
+  --s3: 0.24;
+  --s4: 0.37;
+  --s5: 0.5;
+  --s6: 0.63;
+  --s7: 0.76;
+  --s8: 0.87;
+  --s9: 0.95;
+  --s10: 1;
+
+  --p0: calc(var(--s0) * 100%);
+  --p1: calc(var(--s1) * 100%);
+  --p2: calc(var(--s2) * 100%);
+  --p3: calc(var(--s3) * 100%);
+  --p4: calc(var(--s4) * 100%);
+  --p5: calc(var(--s5) * 100%);
+  --p6: calc(var(--s6) * 100%);
+  --p7: calc(var(--s7) * 100%);
+  --p8: calc(var(--s8) * 100%);
+  --p9: calc(var(--s9) * 100%);
+  --p10: calc(var(--s10) * 100%);
+
+  --c0: hsl(0 0% var(--p0));
+  --c0-1: hsl(0 0% var(--p0) / var(--s1));
+  --c0-2: hsl(0 0% var(--p0) / var(--s2));
+  --c0-3: hsl(0 0% var(--p0) / var(--s3));
+  --c0-4: hsl(0 0% var(--p0) / var(--s4));
+  --c0-5: hsl(0 0% var(--p0) / var(--s5));
+  --c0-6: hsl(0 0% var(--p0) / var(--s6));
+  --c0-7: hsl(0 0% var(--p0) / var(--s7));
+  --c0-8: hsl(0 0% var(--p0) / var(--s8));
+  --c0-9: hsl(0 0% var(--p0) / var(--s9));
+
+  --c1: hsl(0 0% var(--p1));
+  --c1-1: hsl(0 0% var(--p1) / var(--s1));
+  --c1-2: hsl(0 0% var(--p1) / var(--s2));
+  --c1-3: hsl(0 0% var(--p1) / var(--s3));
+  --c1-4: hsl(0 0% var(--p1) / var(--s4));
+  --c1-5: hsl(0 0% var(--p1) / var(--s5));
+  --c1-6: hsl(0 0% var(--p1) / var(--s6));
+  --c1-7: hsl(0 0% var(--p1) / var(--s7));
+  --c1-8: hsl(0 0% var(--p1) / var(--s8));
+  --c1-9: hsl(0 0% var(--p1) / var(--s9));
+
+  --c2: hsl(0 0% var(--p2));
+  --c2-1: hsl(0 0% var(--p2) / var(--s1));
+  --c2-2: hsl(0 0% var(--p2) / var(--s2));
+  --c2-3: hsl(0 0% var(--p2) / var(--s3));
+  --c2-4: hsl(0 0% var(--p2) / var(--s4));
+  --c2-5: hsl(0 0% var(--p2) / var(--s5));
+  --c2-6: hsl(0 0% var(--p2) / var(--s6));
+  --c2-7: hsl(0 0% var(--p2) / var(--s7));
+  --c2-8: hsl(0 0% var(--p2) / var(--s8));
+  --c2-9: hsl(0 0% var(--p2) / var(--s9));
+
+  --c3: hsl(0 0% var(--p3));
+  --c3-1: hsl(0 0% var(--p3) / var(--s1));
+  --c3-2: hsl(0 0% var(--p3) / var(--s2));
+  --c3-3: hsl(0 0% var(--p3) / var(--s3));
+  --c3-4: hsl(0 0% var(--p3) / var(--s4));
+  --c3-5: hsl(0 0% var(--p3) / var(--s5));
+  --c3-6: hsl(0 0% var(--p3) / var(--s6));
+  --c3-7: hsl(0 0% var(--p3) / var(--s7));
+  --c3-8: hsl(0 0% var(--p3) / var(--s8));
+  --c3-9: hsl(0 0% var(--p3) / var(--s9));
+
+  --c4: hsl(0 0% var(--p4));
+  --c4-1: hsl(0 0% var(--p4) / var(--s1));
+  --c4-2: hsl(0 0% var(--p4) / var(--s2));
+  --c4-3: hsl(0 0% var(--p4) / var(--s3));
+  --c4-4: hsl(0 0% var(--p4) / var(--s4));
+  --c4-5: hsl(0 0% var(--p4) / var(--s5));
+  --c4-6: hsl(0 0% var(--p4) / var(--s6));
+  --c4-7: hsl(0 0% var(--p4) / var(--s7));
+  --c4-8: hsl(0 0% var(--p4) / var(--s8));
+  --c4-9: hsl(0 0% var(--p4) / var(--s9));
+
+  --c5: hsl(0 0% var(--p5));
+  --c5-1: hsl(0 0% var(--p5) / var(--s1));
+  --c5-2: hsl(0 0% var(--p5) / var(--s2));
+  --c5-3: hsl(0 0% var(--p5) / var(--s3));
+  --c5-4: hsl(0 0% var(--p5) / var(--s4));
+  --c5-5: hsl(0 0% var(--p5) / var(--s5));
+  --c5-6: hsl(0 0% var(--p5) / var(--s6));
+  --c5-7: hsl(0 0% var(--p5) / var(--s7));
+  --c5-8: hsl(0 0% var(--p5) / var(--s8));
+  --c5-9: hsl(0 0% var(--p5) / var(--s9));
+
+  --c6: hsl(0 0% var(--p6));
+  --c6-1: hsl(0 0% var(--p6) / var(--s1));
+  --c6-2: hsl(0 0% var(--p6) / var(--s2));
+  --c6-3: hsl(0 0% var(--p6) / var(--s3));
+  --c6-4: hsl(0 0% var(--p6) / var(--s4));
+  --c6-5: hsl(0 0% var(--p6) / var(--s5));
+  --c6-6: hsl(0 0% var(--p6) / var(--s6));
+  --c6-7: hsl(0 0% var(--p6) / var(--s7));
+  --c6-8: hsl(0 0% var(--p6) / var(--s8));
+  --c6-9: hsl(0 0% var(--p6) / var(--s9));
+
+  --c7: hsl(0 0% var(--p7));
+  --c7-1: hsl(0 0% var(--p7) / var(--s1));
+  --c7-2: hsl(0 0% var(--p7) / var(--s2));
+  --c7-3: hsl(0 0% var(--p7) / var(--s3));
+  --c7-4: hsl(0 0% var(--p7) / var(--s4));
+  --c7-5: hsl(0 0% var(--p7) / var(--s5));
+  --c7-6: hsl(0 0% var(--p7) / var(--s6));
+  --c7-7: hsl(0 0% var(--p7) / var(--s7));
+  --c7-8: hsl(0 0% var(--p7) / var(--s8));
+  --c7-9: hsl(0 0% var(--p7) / var(--s9));
+
+  --c8: hsl(0 0% var(--p8));
+  --c8-1: hsl(0 0% var(--p8) / var(--s1));
+  --c8-2: hsl(0 0% var(--p8) / var(--s2));
+  --c8-3: hsl(0 0% var(--p8) / var(--s3));
+  --c8-4: hsl(0 0% var(--p8) / var(--s4));
+  --c8-5: hsl(0 0% var(--p8) / var(--s5));
+  --c8-6: hsl(0 0% var(--p8) / var(--s6));
+  --c8-7: hsl(0 0% var(--p8) / var(--s7));
+  --c8-8: hsl(0 0% var(--p8) / var(--s8));
+  --c8-9: hsl(0 0% var(--p8) / var(--s9));
+
+  --c9: hsl(0 0% var(--p9));
+  --c9-1: hsl(0 0% var(--p9) / var(--s1));
+  --c9-2: hsl(0 0% var(--p9) / var(--s2));
+  --c9-3: hsl(0 0% var(--p9) / var(--s3));
+  --c9-4: hsl(0 0% var(--p9) / var(--s4));
+  --c9-5: hsl(0 0% var(--p9) / var(--s5));
+  --c9-6: hsl(0 0% var(--p9) / var(--s6));
+  --c9-7: hsl(0 0% var(--p9) / var(--s7));
+  --c9-8: hsl(0 0% var(--p9) / var(--s8));
+  --c9-9: hsl(0 0% var(--p9) / var(--s9));
+
+  --c10: hsl(0 0% var(--p10));
+  --c10-1: hsl(0 0% var(--p10) / var(--s1));
+  --c10-2: hsl(0 0% var(--p10) / var(--s2));
+  --c10-3: hsl(0 0% var(--p10) / var(--s3));
+  --c10-4: hsl(0 0% var(--p10) / var(--s4));
+  --c10-5: hsl(0 0% var(--p10) / var(--s5));
+  --c10-6: hsl(0 0% var(--p10) / var(--s6));
+  --c10-7: hsl(0 0% var(--p10) / var(--s7));
+  --c10-8: hsl(0 0% var(--p10) / var(--s8));
+  --c10-9: hsl(0 0% var(--p10) / var(--s9));
+}

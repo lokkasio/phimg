@@ -1,0 +1,150 @@
+@import "./modern-normalize.css";
+@import "./colors.css";
+
+:root {
+  --box-shadow: var(--c0-3) 0px 2px 8px;
+  --bg-color: var(--c10);
+  --text-color: var(--c0);
+  --content-width: 67.5rem;
+
+  --input-border-color: var(--c6);
+  --input-border-radius: 3px;
+  --input-bg-readonly: var(--c9);
+
+  --box-border-radius: 3px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: var(--c3);
+    --text-color: var(--c9);
+
+    --input-border-color: var(--c4);
+    --input-bg-readonly: var(--c2);
+  }
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  position: relative;
+}
+
+label {
+  font-size: 0.875rem;
+}
+
+input,
+textarea {
+  border: 1px solid var(--input-border-color);
+  border-radius: var(--input-border-radius);
+  padding: 0.4rem 0.5rem;
+  font-size: 1rem;
+  max-width: 100%;
+}
+
+textarea {
+  padding: 0.3rem;
+  font-size: inherit;
+  resize: vertical;
+}
+
+[type="range"] {
+  padding-left: 0;
+  padding-right: 0;
+  border: 0;
+}
+[type="radio"] {
+  padding: 0;
+}
+
+[readonly] {
+  background-color: var(--input-bg-readonly);
+}
+
+[type="color"] {
+  padding: 0;
+}
+
+:invalid {
+  border-color: red;
+}
+
+fieldset {
+  border: 0;
+  padding: 1rem;
+  margin: 0;
+  min-width: 0;
+}
+legend {
+  width: 100%;
+  font-size: 1.3rem;
+  display: contents;
+}
+legend + * {
+  margin-top: 1rem;
+}
+
+hr {
+  border-width: 0 0 1px;
+  border-color: var(--input-border-color);
+}
+
+pre {
+  padding: 0.25rem;
+  overflow: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  appearance: none;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+  border: 1px solid var(--input-border-color);
+}
+
+progress {
+  width: 100%;
+  max-width: 20rem;
+  position: absolute;
+  top: 6.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+[aria-busy="false"] + progress {
+  display: none;
+}
+
+[aria-busy="true"] {
+  opacity: 0.25;
+}
+
+#app {
+  margin-bottom: 4rem;
+}
+
+.content {
+  margin: 0 auto 0.5rem;
+  max-width: var(--content-width);
+  padding: 0.5rem;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+[hidden] {
+  display: none !important;
+}

@@ -1,0 +1,10 @@
+:root {
+  --form_gap: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(max-content, 3.5rem) minmax(0, 1fr);
+  align-items: center;
+  gap: calc(var(--form_gap) / 2) var(--form_gap);
+}

@@ -1,0 +1,11 @@
+._ {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.urls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}

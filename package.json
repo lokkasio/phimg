@@ -1,0 +1,30 @@
+{
+  "name": "phimg",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "author": "Lukas Mestel",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "_build": "esbuild app=app/index.tsx demo=demo/index.ts --bundle --outdir=www --sourcemap --target=safari15 --format=esm --alias:react=preact/compat",
+    "dev": "npm run _build -- --watch --servedir=www",
+    "build": "NODE_ENV=production npm run _build -- --minify",
+    "prepare": "cd www && git clean -xdf && cd .. && msw init www"
+  },
+  "dependencies": {
+    "thumbhash": "^0.1.1"
+  },
+  "devDependencies": {
+    "@preact/signals": "^1.2.1",
+    "clsx": "^2.0.0",
+    "esbuild": "^0.19.2",
+    "msw": "^1.3.0",
+    "preact": "^10.17.1",
+    "react-feather": "^2.0.10"
+  },
+  "msw": {
+    "workerDirectory": "www"
+  }
+}

@@ -1,0 +1,17 @@
+@import "app/index.css";
+@import "app/components/header/Header.module.css";
+
+label {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+label span {
+  flex: 1 0 auto;
+}
+
+label input {
+  width: 100%;
+}

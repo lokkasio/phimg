@@ -1,0 +1,27 @@
+._ {
+  display: flex;
+}
+
+.label {
+  margin-bottom: 0.25rem;
+}
+
+.code {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0;
+  flex: 1;
+}
+
+.copy {
+  appearance: none;
+  margin-left: -2px;
+  border-radius: var(--input-border-radius);
+  background: var(--c8);
+  color: var(--c1);
+}
+
+.copy:hover,
+.copy:focus {
+  background: var(--c7);
+}

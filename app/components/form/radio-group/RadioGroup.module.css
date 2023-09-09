@@ -1,0 +1,14 @@
+.radio_group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--form_gap);
+}
+
+.radio {
+  display: inline-flex;
+  gap: calc(var(--form_gap) / 2);
+  border-radius: 1rem;
+  padding: 2px 6px 2px 4px;
+  border: 1px solid var(--input-border-color);
+  align-items: center;
+}
