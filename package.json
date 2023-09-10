@@ -24,9 +24,10 @@
   "scripts": {
     "_build_app": "esbuild app=app/index.tsx --bundle --splitting --outdir=www --sourcemap --target=safari15 --format=esm --alias:react=preact/compat --define:process.env.CI=\\\"${CI}\\\"",
     "_build_lib": "rm -rf dist && esbuild 'src/*.ts' --sourcemap --outdir=dist --format=esm --target=safari15 --minify && tsc",
-    "build": "NODE_ENV=production npm run _build_app -- --minify && npm run _build_lib",
+    "build": "NODE_ENV=production npm run _build_app -- --minify",
     "dev": "npm run _build_app -- --watch --servedir=www",
-    "prepare": "cd www && git clean -xdf && cd .. && msw init www"
+    "prepare": "cd www && git clean -xdf && cd .. && msw init www",
+    "prepublishOnly": "npm run _build_lib"
   },
   "dependencies": {
     "thumbhash": "^0.1.1"
