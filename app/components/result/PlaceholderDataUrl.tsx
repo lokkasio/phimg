@@ -34,5 +34,20 @@ export const PlaceholderDataUrl = (
       src={placeholderDataUrl}
     />
     <SrcInput />
+
+    <details>
+      <summary>How to use</summary>
+      <div>
+        <pre>
+          {`\
+<img
+  src="${placeholderDataUrl}"
+  width="${width}"
+  height="${height}"
+  alt="Placeholder image"
+/>`}
+        </pre>
+      </div>
+    </details>
   </div>
 );

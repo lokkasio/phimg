@@ -54,6 +54,35 @@ export const PlaceholderServiceWorkerUrl = (
         aria-label="Image loading…"
       />
       <SrcInput />
+
+      <details>
+        <summary>How to use</summary>
+        <div>
+          <pre>
+            {`\
+<img
+  src="${placeholderUrl}"
+  width="${width}"
+  height="${height}"
+  alt="Placeholder image"
+/>`}
+          </pre>
+          <hr />
+          <pre>
+            {`\
+import { setupWorker, rest } from 'msw'
+import { phimgResolver } from "phimg/msw"
+
+const worker = setupWorker(
+  rest.get(rest.get("/phimg.svg", phimgResolver)),
+)
+worker.start()`}
+          </pre>
+          <p>
+            <a href="https://mswjs.io/">Mock Service Worker</a>
+          </p>
+        </div>
+      </details>
     </div>
   );
 };
