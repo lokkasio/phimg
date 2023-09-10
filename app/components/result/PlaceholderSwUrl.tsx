@@ -44,7 +44,7 @@ export const PlaceholderServiceWorkerUrl = (
           alt="Generated placeholder image"
           width={width}
           height={height}
-          src={mswLoadingState.value === 2 && placeholderUrl}
+          src={mswLoadingState.value === 2 ? placeholderUrl : undefined}
           onLoad={(event) => repaintOnIos(event.target as HTMLImageElement)}
         />
       </div>
