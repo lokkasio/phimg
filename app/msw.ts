@@ -1,10 +1,10 @@
 import { rest, setupWorker } from "msw";
-import { mswResolver } from "src/msw";
+import { phimgResolver } from "src/msw";
 
 const pathPrefix = process.env.CI ? "/phimg" : "";
 
 export const initMsw = () =>
-  setupWorker(rest.get("/phimg.svg", mswResolver)).start({
+  setupWorker(rest.get("/phimg.svg", phimgResolver)).start({
     serviceWorker: {
       url: pathPrefix + "/mockServiceWorker.js",
       options: {

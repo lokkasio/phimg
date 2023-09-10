@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2021", "DOM", "ES2021.String"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "baseUrl": "../",
+    "paths": {
+      "react": ["../node_modules/preact/compat/"],
+      "react-dom": ["../node_modules/preact/compat/"]
+    },
+    "forceConsistentCasingInFileNames": true
+  }
+}

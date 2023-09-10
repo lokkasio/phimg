@@ -4,9 +4,9 @@ import {
   RestContext,
   DefaultBodyType,
 } from "msw";
-import { searchParamsToSvgString } from "./lib";
+import { searchParamsToSvgString } from "./lib.js";
 
-export const mswResolver: ResponseResolver<
+export const phimgResolver: ResponseResolver<
   RestRequest,
   RestContext,
   DefaultBodyType

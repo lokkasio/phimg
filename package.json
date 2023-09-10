@@ -1,16 +1,31 @@
 {
   "name": "phimg",
   "version": "0.0.0",
-  "description": "",
+  "description": "placeholder image generator",
   "keywords": [],
   "license": "MIT",
   "author": "Lukas Mestel",
   "type": "module",
-  "main": "index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/lib.js",
+      "types": "./dist/lib.d.ts"
+    },
+    "./*": {
+      "import": "./dist/*.js",
+      "types": "./dist/*.d.ts"
+    }
+  },
+  "main": "dist/lib.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "_build": "esbuild app=app/index.tsx --bundle --splitting --outdir=www --sourcemap --target=safari15 --format=esm --alias:react=preact/compat --define:process.env.CI=\\\"${CI}\\\"",
-    "dev": "npm run _build -- --watch --servedir=www",
-    "build": "NODE_ENV=production npm run _build -- --minify",
+    "_build_app": "esbuild app=app/index.tsx --bundle --splitting --outdir=www --sourcemap --target=safari15 --format=esm --alias:react=preact/compat --define:process.env.CI=\\\"${CI}\\\"",
+    "_build_lib": "rm -rf dist && esbuild 'src/*.ts' --sourcemap --outdir=dist --format=esm --target=safari15 --minify && tsc",
+    "build": "NODE_ENV=production npm run _build_app -- --minify && npm run _build_lib",
+    "dev": "npm run _build_app -- --watch --servedir=www",
     "prepare": "cd www && git clean -xdf && cd .. && msw init www"
   },
   "dependencies": {
@@ -22,7 +37,8 @@
     "esbuild": "^0.19.2",
     "msw": "^1.3.0",
     "preact": "^10.17.1",
-    "react-feather": "^2.0.10"
+    "react-feather": "^2.0.10",
+    "typescript": "^5.2.2"
   },
   "msw": {
     "workerDirectory": "www"

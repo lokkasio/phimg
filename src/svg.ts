@@ -1,5 +1,5 @@
-import { getFontSize, thumbHashToDataURL } from "./lib";
-import h from "./vsvg";
+import { getFontSize, thumbHashToDataURL } from "./lib.js";
+import h from "./vsvg.js";
 
 export type SvgOptions = {
   /** Width */

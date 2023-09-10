@@ -1,5 +1,5 @@
 import { rgbaToThumbHash, thumbHashToRGBA } from "thumbhash";
-import { SvgOptions, createSvgString } from "./svg";
+import { SvgOptions, createSvgString } from "./svg.js";
 
 const toHex = (c: number) => ("0" + c.toString(16)).slice(-2);
 export const alphaHex = (a: number) =>
