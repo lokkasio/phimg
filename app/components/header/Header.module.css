@@ -1,0 +1,51 @@
+._ {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--bg-color);
+  box-shadow: var(--c0-3) 0px 0px 4px;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.nav {
+  --nav-link-color: var(--c4);
+  --nav-link-color-hover: var(--c1);
+
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav {
+    --nav-link-color: var(--c7);
+    --nav-link-color-hover: var(--c9);
+  }
+}
+
+.logo,
+.navLink {
+  padding: 0.5rem;
+  text-decoration: none;
+}
+
+.logo {
+  font-family: cursive;
+  color: var(--c5);
+}
+
+.navLink {
+  line-height: 1;
+  color: var(--nav-link-color);
+}
+
+.logo:hover,
+.logo:focus,
+.navLink:hover,
+.navLink:focus {
+  color: var(--nav-link-color-hover);
+}

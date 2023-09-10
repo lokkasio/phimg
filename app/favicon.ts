@@ -1,4 +1,4 @@
-import { createSvgString, svgStringToDataUrl } from "./svg";
+import { createSvgString, svgStringToDataUrl } from "src/svg";
 
 const favicon = document.querySelector("link[rel=icon]");
 const canvas = document.createElement("canvas");
@@ -11,11 +11,11 @@ export const updateFavicon = (img: HTMLImageElement) => {
   canvas.height = naturalHeight;
   ctx.clearRect(0, 0, naturalWidth, naturalHeight);
   ctx.drawImage(img, 0, 0, naturalWidth, naturalHeight);
-  const placeholderDataUrl = canvas.toDataURL();
+  const url = canvas.toDataURL();
   const svgString = createSvgString({
     w: size,
     h: size,
-    b: `center/contain no-repeat url(${placeholderDataUrl})`,
+    b: `center/contain no-repeat url(${url})`,
   });
   favicon.setAttribute("href", svgStringToDataUrl(svgString));
 };

@@ -27,7 +27,6 @@
 body {
   background: var(--bg-color);
   color: var(--text-color);
-  position: relative;
 }
 
 label {
@@ -108,22 +107,6 @@ button {
   border: 1px solid var(--input-border-color);
 }
 
-progress {
-  width: 100%;
-  max-width: 20rem;
-  position: absolute;
-  top: 6.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-}
-[aria-busy="false"] + progress {
-  display: none;
-}
-
-[aria-busy="true"] {
-  opacity: 0.25;
-}
-
 #app {
   margin-bottom: 4rem;
 }
@@ -132,58 +115,6 @@ progress {
   margin: 0 auto 0.5rem;
   max-width: var(--content-width);
   padding: 0.5rem;
-}
-
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 2;
-  background: var(--bg-color);
-  box-shadow: var(--c0-3) 0px 0px 4px;
-}
-
-.header__inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.5rem;
-}
-
-.header__nav {
-  --nav-link-color: var(--c4);
-  --nav-link-color-hover: var(--c1);
-
-  display: flex;
-  gap: 0.5rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  .header__nav {
-    --nav-link-color: var(--c7);
-    --nav-link-color-hover: var(--c9);
-  }
-}
-
-.header__logo,
-.header__navLink {
-  padding: 0.5rem;
-  text-decoration: none;
-}
-
-.header__logo {
-  font-family: cursive;
-  color: var(--c5);
-}
-
-.header__navLink {
-  line-height: 1;
-  color: var(--nav-link-color);
-}
-
-.header__logo:hover,
-.header__logo:focus,
-.header__navLink:hover,
-.header__navLink:focus {
-  color: var(--nav-link-color-hover);
 }
 
 .visuallyHidden {

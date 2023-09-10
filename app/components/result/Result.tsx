@@ -1,33 +1,43 @@
 import { FunctionComponent } from "preact";
-import { TargetedEvent } from "preact/compat";
 import { clsx } from "clsx";
-import { updateFavicon } from "src/favicon";
-import { PlaceholderDataUrl, placeholderDataUrl } from "./PlaceholderDataUrl";
+import { sessionSignal } from "app/sessionSignal";
+import { RadioGroup } from "../form/radio-group/RadioGroup";
+import { PlaceholderDataUrl } from "./PlaceholderDataUrl";
 import { PlaceholderServiceWorkerUrl } from "./PlaceholderSwUrl";
 import style from "./Result.module.css";
 
-const iOS = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
-const onImageLoaded = (event: TargetedEvent<HTMLImageElement, Event>) => {
-  const img = event.target as HTMLImageElement;
-  updateFavicon(img);
-
-  if (iOS) {
-    // force repaint
-    img.setAttribute("hidden", "");
-    requestAnimationFrame(() => {
-      img.removeAttribute("hidden");
-    });
-  }
-};
+const previewMode = sessionSignal("preview_mode", "dataurl");
+const swAvailable = "serviceWorker" in navigator;
 
 export const Result: FunctionComponent<{ className?: string }> = ({
   className,
 }) => (
   <main className={clsx(style._, className)}>
-    <img src={placeholderDataUrl} onLoad={onImageLoaded} />
-    <div className={style.urls}>
-      <PlaceholderDataUrl />
-      <PlaceholderServiceWorkerUrl />
-    </div>
+    {swAvailable && (
+      <RadioGroup
+        name="mode"
+        options={[
+          {
+            label: "Data URL",
+            value: "dataurl",
+          },
+          {
+            label: "MSW",
+            value: "msw",
+          },
+        ]}
+        signal={previewMode}
+      />
+    )}
+
+    <PlaceholderDataUrl
+      hidden={previewMode.value !== "dataurl"}
+      className={style.mode}
+    />
+
+    <PlaceholderServiceWorkerUrl
+      hidden={previewMode.value !== "msw"}
+      className={style.mode}
+    />
   </main>
 );
